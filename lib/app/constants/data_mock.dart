@@ -1,5 +1,5 @@
-import 'package:crupierly/model/card_types.dart';
-import 'package:crupierly/model/card_value.dart';
+import 'package:crupierly/domain/enum/card_types.dart';
+import 'package:crupierly/domain/models/card_value.dart';
 
 const List<CardValue> orderedDeck = [
   //Hearts

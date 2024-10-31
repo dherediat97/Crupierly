@@ -1,11 +1,12 @@
-import 'package:crupierly/model/card_types.dart';
+import 'package:crupierly/app/constants/app_assets.dart';
+import 'package:crupierly/domain/enum/card_types.dart';
 
 class CardValue {
   const CardValue({
     required this.cardType,
     required this.symbol,
     required this.value,
-    this.backCard = 'assets/images/cards/back_card.png',
+    this.backCard = AppAssets.backCard,
   });
 
   final CardType cardType;

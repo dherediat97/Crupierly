@@ -1,6 +1,6 @@
-import 'package:crupierly/constants/data_mock.dart';
-import 'package:crupierly/features/game/deck.dart';
-import 'package:crupierly/features/home/home_screen_background.dart';
+import 'package:crupierly/app/constants/data_mock.dart';
+import 'package:crupierly/presentation/features/game/deck.dart';
+import 'package:crupierly/presentation/features/home/home_screen_background.dart';
 import 'package:flutter/material.dart';
 
 class GameView extends StatefulWidget {

@@ -1,4 +1,4 @@
-import 'package:crupierly/model/card_value.dart';
+import 'package:crupierly/domain/models/card_value.dart';
 import 'package:flutter/material.dart';
 
 class BackCard extends StatefulWidget {

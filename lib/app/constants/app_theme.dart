@@ -1,4 +1,4 @@
-import 'package:crupierly/constants/app_constants.dart';
+import 'package:crupierly/app/constants/app_constants.dart';
 import 'package:flutter/material.dart';
 
 var defaultThemeData = ThemeData(

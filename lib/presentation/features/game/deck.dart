@@ -1,7 +1,7 @@
-import 'package:crupierly/features/game/widgets/back_card.dart';
-import 'package:crupierly/features/game/widgets/front_card.dart';
-import 'package:crupierly/model/card_value.dart';
-import 'package:crupierly/features/game/widgets/animated_card.dart';
+import 'package:crupierly/presentation/features/game/widgets/back_card.dart';
+import 'package:crupierly/presentation/features/game/widgets/front_card.dart';
+import 'package:crupierly/domain/models/card_value.dart';
+import 'package:crupierly/presentation/features/game/widgets/animated_card.dart';
 import 'package:flutter/material.dart';
 
 class Deck extends StatefulWidget {

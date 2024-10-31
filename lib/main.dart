@@ -1,13 +1,14 @@
-import 'package:crupierly/constants/app_constants.dart';
-import 'package:crupierly/constants/data_mock.dart';
-import 'package:crupierly/features/game/deck.dart';
-import 'package:crupierly/model/game.dart';
-import 'package:crupierly/theme/theme.dart';
-import 'package:crupierly/features/home/home_screen_background.dart';
+import 'package:crupierly/app/constants/app_constants.dart';
+import 'package:crupierly/app/constants/data_mock.dart';
+import 'package:crupierly/presentation/features/game/deck.dart';
+import 'package:crupierly/domain/models/game.dart';
+import 'package:crupierly/app/constants/app_theme.dart';
+import 'package:crupierly/presentation/features/home/home_screen_background.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const ProviderScope(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
