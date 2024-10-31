@@ -1,8 +1,9 @@
 import 'package:crupierly/constants/app_constants.dart';
-import 'package:crupierly/game/game.dart';
+import 'package:crupierly/constants/data_mock.dart';
+import 'package:crupierly/features/game/deck.dart';
+import 'package:crupierly/model/game.dart';
 import 'package:crupierly/theme/theme.dart';
-import 'package:crupierly/widgets/game_view.dart';
-import 'package:crupierly/widgets/home_screen_background.dart';
+import 'package:crupierly/features/home/home_screen_background.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -37,54 +38,39 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(appName),
-        actions: [
-          IconButton(
-            onPressed: () {
-              if (game.isFullScreen) {
-                game.exitFullScreen();
-              } else {
-                game.showFullScreen();
-              }
-            },
-            icon: Icon(
-                game.isFullScreen ? Icons.fullscreen : Icons.fullscreen_exit),
-          )
-        ],
-      ),
-      body: !game.newGame
-          ? HomeScreenBackground(
-              foreground: Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    FilledButton(
-                      onPressed: () {
-                        setState(() {
-                          game.createNew();
-                        });
-                      },
-                      child: const Text('Empezar partida'),
-                    ),
-                    const SizedBox(
-                      height: 100,
-                    ),
-                    // game.isSaved
-                    //     ? FilledButton(
-                    //         onPressed: () => game.createNew(),
-                    //         child: const Text("Continuar partida"),
-                    //       )
-                    //     : OutlinedButton(
-                    //         onPressed: () => game.resume(),
-                    //         child: const Text("Continuar partida"),
-                    //       )
-                  ],
-                ),
-              ),
+        appBar: AppBar(
+          title: const Text(appName),
+          actions: [
+            IconButton(
+              onPressed: () {
+                if (game.isFullScreen) {
+                  game.exitFullScreen();
+                } else {
+                  game.showFullScreen();
+                }
+              },
+              icon: Icon(
+                  game.isFullScreen ? Icons.fullscreen : Icons.fullscreen_exit),
             )
-          : const GameView(),
-    );
+          ],
+        ),
+        body: HomeScreenBackground(
+          foreground: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              if (!game.newGame)
+                FilledButton(
+                  onPressed: () {
+                    setState(() {
+                      game.createNew();
+                    });
+                  },
+                  child: const Text('Barajar'),
+                ),
+              if (game.newGame) const Deck(orderedDeck: orderedDeck)
+            ],
+          ),
+        ));
   }
 }

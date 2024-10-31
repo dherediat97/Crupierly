@@ -1,7 +1,7 @@
 import 'package:flutter/services.dart';
 
 class Game {
-  bool newGame = true;
+  bool newGame = false;
   bool isFullScreen = false;
   resume() {
     newGame = false;

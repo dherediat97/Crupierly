@@ -1,5 +1,6 @@
-import 'package:crupierly/widgets/deck.dart';
-import 'package:crupierly/widgets/home_screen_background.dart';
+import 'package:crupierly/constants/data_mock.dart';
+import 'package:crupierly/features/game/deck.dart';
+import 'package:crupierly/features/home/home_screen_background.dart';
 import 'package:flutter/material.dart';
 
 class GameView extends StatefulWidget {
@@ -13,7 +14,9 @@ class _GameViewState extends State<GameView> {
   @override
   Widget build(BuildContext context) {
     return const HomeScreenBackground(
-      foreground: Deck(),
+      foreground: Deck(
+        orderedDeck: orderedDeck,
+      ),
     );
   }
 }
